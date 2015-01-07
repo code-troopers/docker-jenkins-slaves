@@ -8,5 +8,5 @@ RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-get update
 RUN apt-get -y install nodejs
 
-# Install bower
-RUN npm install -g bower
+# Install bower and grunt
+RUN npm install -g bower grunt grunt-cli
