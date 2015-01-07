@@ -7,3 +7,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-get update
 RUN apt-get -y install nodejs
+
+# Install bower
+RUN npm install -g bower
