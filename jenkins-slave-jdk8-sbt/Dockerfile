@@ -1,4 +1,4 @@
-FROM docker-jenkins-slave-jdk8
+FROM codetroopers/jenkins-slave-jdk8
 
 MAINTAINER Cedric Gatay "c.gatay@code-troopers.com"
 ENV DEBIAN_FRONTEND noninteractive
