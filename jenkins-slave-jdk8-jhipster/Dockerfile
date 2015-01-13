@@ -10,3 +10,5 @@ RUN apt-get -y install nodejs
 
 # Install bower and grunt
 RUN npm install -g bower grunt grunt-cli
+# Install local grunt for tests
+RUN npm install grunt
