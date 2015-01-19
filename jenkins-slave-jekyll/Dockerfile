@@ -29,8 +29,3 @@ RUN npm install -g gulp && \
     npm install -g bower
 
 RUN gem install jekyll rdiscount kramdown
-
-VOLUME /src
-EXPOSE 9002
-
-WORKDIR /src
