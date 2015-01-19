@@ -4,7 +4,7 @@ MAINTAINER bitard [DOT] michael [AT] gmail [DOT] com
 
 # Install ruby
 RUN apt-get update && \
-    apt-get install -y ca-certificates apt-transport-https curl libfontconfig sudo ruby ruby-dev ruby-bundler && \
+    apt-get install -y git ca-certificates apt-transport-https curl libfontconfig sudo ruby ruby-dev ruby-bundler && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD nodesource.list /etc/apt/sources.list.d/nodesource.list
