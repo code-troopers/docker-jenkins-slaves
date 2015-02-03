@@ -1,4 +1,4 @@
-FROM codetroopers/jenkins-slave-jdk8-mvn
+FROM codetroopers/jenkins-slave-jdk8
 
 MAINTAINER Benjamin Cousin "b.cousin@code-troopers.com"
 ENV DEBIAN_FRONTEND noninteractive
@@ -8,7 +8,8 @@ RUN apt-get update -qq && apt-get install -qqy \
     apt-transport-https \
     ca-certificates \
     lxc \
-    iptables
+    iptables \
+    curl
 
 # Install Docker from Docker Inc. repositories.
 RUN echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list \
