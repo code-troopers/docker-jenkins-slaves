@@ -1,6 +1,6 @@
 FROM codetroopers/jenkins-slave-jdk8-mvn
 
-MAINTAINER Benjamin Cousin "b.cousin@code-troopers.com"
+MAINTAINER Cedric Gatay "c.gatay@code-troopers.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install node.js from PPA
