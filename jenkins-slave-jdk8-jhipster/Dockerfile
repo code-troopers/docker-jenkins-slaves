@@ -12,3 +12,6 @@ RUN apt-get -y install nodejs
 RUN npm install -g bower grunt grunt-cli
 # Install local grunt for tests
 RUN npm install grunt
+
+# Install make g++
+RUN apt-get -y install make g++
