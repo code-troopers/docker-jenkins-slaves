@@ -15,3 +15,6 @@ RUN npm install grunt
 
 # Install make g++
 RUN apt-get -y install make g++
+
+# Install compass
+RUN gem install sass compass --no-ri --no-rdoc
