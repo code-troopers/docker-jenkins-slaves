@@ -13,8 +13,9 @@ RUN npm install -g bower grunt grunt-cli
 # Install local grunt for tests
 RUN npm install grunt
 
+# Install make g++
+RUN apt-get -y install ruby ruby-dev make g++
+
 # Install compass
 RUN gem install sass compass --no-ri --no-rdoc
-# Install make g++
-RUN apt-get -y install make g++
 
