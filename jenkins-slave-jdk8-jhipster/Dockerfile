@@ -19,3 +19,6 @@ RUN apt-get -y install ruby ruby-dev make g++
 # Install compass
 RUN gem install sass compass --no-ri --no-rdoc
 
+# Install imageMagick
+RUN apt-get -y install imagemagick
+
