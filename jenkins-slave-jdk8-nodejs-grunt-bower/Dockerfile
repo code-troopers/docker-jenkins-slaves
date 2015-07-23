@@ -4,6 +4,7 @@ MAINTAINER Bollot Matthieu "m.bollot@code-troopers.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y --force-yes build-essential
+RUN npm -g install npm@2
 
 # Install Bower & Grunt
 RUN npm install -g bower grunt-cli
