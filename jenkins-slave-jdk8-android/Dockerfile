@@ -22,7 +22,7 @@ USER jenkins
 
 ENV BUILD_TOOLS_VERSION 23.0.3
 ENV ANDROID_VERSION 24
-RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --no-ui --filter platform-tools,build-tools-${BUILD_TOOLS_VERSION},android-${ANDROID_VERSION},addon-google_apis_x86-google-${ANDROID_VERSION},extra-android-support,extra-android-m2repository,extra-google-m2repository,sys-img-armeabi-v7a-android-${ANDROID_VERSION}"]
+RUN ["sh", "-c", "/opt/tools/android-accept-licenses.sh \"android update sdk --all --no-ui --filter platform-tools,build-tools-${BUILD_TOOLS_VERSION},android-${ANDROID_VERSION},addon-google_apis_x86-google-${ANDROID_VERSION},extra-android-support,extra-android-m2repository,extra-google-m2repository,sys-img-armeabi-v7a-android-${ANDROID_VERSION}\""]
 
 RUN which adb
 RUN which android
