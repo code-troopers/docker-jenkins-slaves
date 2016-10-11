@@ -7,7 +7,8 @@ ENV PATH $PATH:$ANDROID_HOME/platform-tools
 RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force-yes expect git wget libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1 && apt-get clean
 
 # Install Android SDK
-RUN cd /opt && wget --output-document=android-sdk.tgz --quiet http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz && tar xzf android-sdk.tgz && rm -f android-sdk.tgz && chown -R jenkins.jenkins android-sdk-linux 
+ENV SDK_VERSION "r24.4.1"
+RUN cd /opt && wget --output-document=android-sdk.tgz --quiet https://dl.google.com/android/android-sdk_${SDK_VERSION}-linux.tgz && tar xzf android-sdk.tgz && rm -f android-sdk.tgz && chown -R jenkins.jenkins android-sdk-linux
 
 # Setup environment
 ENV ANDROID_HOME /opt/android-sdk-linux
@@ -19,7 +20,9 @@ ENV PATH ${PATH}:/opt/tools
 
 USER jenkins
 
-RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --no-ui --filter platform-tools,tools,build-tools-23.0.2,android-23,addon-google_apis_x86-google-23,extra-android-support,extra-android-m2repository,extra-google-m2repository,sys-img-armeabi-v7a-android-23"]
+ENV BUILD_TOOLS_VERSION 23.0.3
+ENV ANDROID_VERSION 24
+RUN ["/opt/tools/android-accept-licenses.sh", "android update sdk --all --no-ui --filter platform-tools,build-tools-${BUILD_TOOLS_VERSION},android-${ANDROID_VERSION},addon-google_apis_x86-google-${ANDROID_VERSION},extra-android-support,extra-android-m2repository,extra-google-m2repository,sys-img-armeabi-v7a-android-${ANDROID_VERSION}"]
 
 RUN which adb
 RUN which android
