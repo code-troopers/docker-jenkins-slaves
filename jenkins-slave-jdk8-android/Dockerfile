@@ -18,7 +18,6 @@ USER jenkins
 
 ENV BUILD_TOOLS_VERSION 25.0.3
 ENV ANDROID_VERSION 25
-RUN sdkmanager --list
 RUN /opt/scripts/android-accept-licenses.sh "sdkmanager platform-tools \"build-tools;${BUILD_TOOLS_VERSION}\" \"platforms;android-${ANDROID_VERSION}\" \"add-ons;addon-google_apis-google-24\" \"extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2\" \"extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2\" \"system-images;android-${ANDROID_VERSION};google_apis;armeabi-v7a\" ndk-bundle"
 
 RUN which adb
