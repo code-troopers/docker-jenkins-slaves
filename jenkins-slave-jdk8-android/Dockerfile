@@ -7,7 +7,7 @@ RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y --force
 COPY scripts /opt/scripts
 
 # Install Android tools
-ENV SDK_VERSION "r26.0.2"
+ENV SDK_VERSION "r25.2.5"
 RUN mkdir /opt/android-sdk-linux && cd /opt/android-sdk-linux && wget --output-document=tools-sdk.zip --quiet https://dl.google.com/android/repository/tools_${SDK_VERSION}-linux.zip && unzip tools-sdk.zip && rm -f tools-sdk.zip && chmod +x /opt/scripts/android-accept-licenses.sh && chown -R jenkins.jenkins /opt
 
 # Setup environment
