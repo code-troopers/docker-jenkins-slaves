@@ -3,7 +3,8 @@ FROM evarga/jenkins-slave
 MAINTAINER Cedric Gatay "c.gatay@code-troopers.com"
 ENV DEBIAN_FRONTEND noninteractive
 # install python-software-properties (so you can do add-apt-repository)
-RUN apt-get install -y -q python-software-properties software-properties-common
+RUN apt-get update
+RUN apt-get install -y -q software-properties-common
 
 RUN apt-get install -y -q git
 # install oracle java from PPA
