@@ -4,6 +4,7 @@ MAINTAINER Cedric Gatay "c.gatay@code-troopers.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install node.js from PPA
+RUN apt-get update
 RUN apt-get -y install curl make g++
 RUN apt-add-repository -y ppa:brightbox/ruby-ng
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
